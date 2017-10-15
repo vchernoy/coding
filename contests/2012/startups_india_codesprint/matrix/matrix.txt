@@ -1,0 +1,69 @@
+CodeSprint Startups India: Matrix
+
+Source: https://csindia.interviewstreet.com/challenges
+
+Mr. Evan has given to his students an assignment where they need to multiply two boolean matrices and write the resultant matrix. Boolean matrix
+multiplication is done in the same way as standard matrix multiplication except for in the resultant matrix any entry which is not zero is treated as one.
+
+Mr. Evan is tired of checking the correctness of their results, so he has asked you for help.
+
+Given three N X N boolean matrices A, B and C, you need to write a code to determine whether A x B = C.
+
+NOTE: There need not be a deterministic algorithm so you need to come up with a better probabilistic algorithm to get accepted.
+
+Input Format:
+First line of input contains the number testcases T. Then there is a blank line. Then for each test case input is in the format: first line contain N ,
+then N lines follows each having N space separated boolean values describing matrix A. Then there is a blank line after which N lines follow describing
+matrix B and then after a blank line are N lines describing matrix C.
+
+There is a blank line between two consecutive testcases.
+
+Output Format:
+For each testcase write in a separate line yes/no depending on whether C equals A x B, x is the sign of boolean multiplication of two matrices. Print
+"yes"(quotes are for clarity) if A x B = C else print "no"(quotes are for clarity).
+
+Sample Input:
+2
+ 
+3
+0 0 1
+0 0 1
+0 0 0
+ 
+0 0 0
+0 0 0
+0 0 0
+
+0 0 0
+0 1 0
+0 0 0
+
+5
+0 0 0 0 0
+1 0 0 0 0
+0 1 0 0 0
+0 0 1 0 0
+0 0 0 0 1
+
+1 0 0 0 0
+0 0 0 0 0
+0 1 0 0 0
+1 0 0 0 0
+0 0 0 0 0
+
+0 0 0 0 0
+1 0 0 0 0
+0 0 0 0 0
+0 1 0 0 0
+0 0 0 0 0
+
+Sample Output:
+no
+yes
+
+Constraints:
+1 <= T <=  5
+1 <= N <= 800
+
+NOTE: The input file will not exceed 10 MegaBytes
+
