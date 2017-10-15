@@ -1,0 +1,29 @@
+Problem: Alternating Sequence (Codesprint Sequoia)
+Source: https://sequoia.interviewstreet.com/challenges/dashboard/#problem/4f74014f0f770
+
+We call a sequence b[1], ..., b[m] an alternating sequence if:
+  for every odd 1 < i <= m, we have b[i] < b[i-1],
+  for every even 1 < i <= m, we have b[i] > b[i-1].
+
+Given a sequence of integers a[1], ..., a[n], we define a[i1], ..., a[im] to be a subsequence if 1 <= i1 < i2 <...< im <= n.
+Your program must find the length of the longest alternating subsequence of a. 
+
+Input
+First line of input contains the length of sequence n (1 <= n <= 200,000). The second line contains n space seperated integers a[1], ..., a[n] (1 <= a[i] <= 10^9).
+
+Output
+Output is just a single integer number which denotes the length of longest alternating subsequence.
+
+Sample Input
+10
+1 2 3 4 5 6 5 4 3 2
+
+Sample Output
+3
+
+Explanation:
+On many alternating subsequences of length three, some are 1 6 2, 3 5 3, 4 6 2 etc. There is no alternating subsequence of length greater than three.
+
+Note:
+A sequence with just two elements, such that the second element is greater than first is a valid alternating sequence. Moreover a sequence with only one element is also considered an alternating sequence.
+

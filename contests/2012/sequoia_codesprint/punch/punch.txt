@@ -1,0 +1,32 @@
+Problem: Punch (Codesprint Sequoia)
+Source: https://sequoia.interviewstreet.com/challenges/dashboard/#problem/4f7f34824d911
+
+We have n punching bags in a row. Mr Lee is going to practice with them for the upcoming Boxing tournament.
+
+Each bag has a resistance level. Mr Lee can punch a bag if its resistance is greater than 0. He is an extremely hard puncher: when Mr Lee punches a bag, not only is its resistance set to 0 (ie: the bag is destroyed), but also the resistances of its immediately adjacent neighbors (one on left and other on right) are decreased by one. If at any point of time the resistance of a bag drops to zero or less it is considered as destroyed. A punch on a bag with resistance greater than 0 has no impact on an immediate neighbour which is already destroyed. 
+
+Mr Lee wants to maximize his (very expensive) workout sessions, and would like to punch on these bags as much as possible. For any set of punching bags, what is the maximum number of punches that he can perform?
+
+Input Format
+On the only line of input there are n characters describing the resistances of the bags from 1 to n.
+
+Ouput Format 
+On the only line of the output print an integer describing the maximum number of punches Mr Lee can punch for that set of bags.
+
+Sample Input
+11
+
+Sample Ouput
+1
+
+Sample Input
+021
+
+Sample Output
+2
+
+Explanation
+In the first example there are two bags, and we can punch only one of them before destroying both. In the second example we can punch on the third bag and then on the second bag to obtain two punches.
+
+Constraints
+Each bag has a resistance level between 0 and 3 ( inclusive ) and the number of bags is not more than 100.
