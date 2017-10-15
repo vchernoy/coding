@@ -1,0 +1,71 @@
+System Sprint: Strip Versions
+
+Source: https://systems.interviewstreet.com/challenges
+
+
+In a certain version control system (with design similar to Git's), a commit is defined as
+
+  parent: <commit id>
+  <payload>
+
+A id of a commit is just the SHA1 of that commit's contents i.e SHA1("parent: <commit id>\n<payload>").
+
+So for example, a perfectly valid commit would be something along
+
+  parent: 7cc08abbdc41b16258454cb815f2241f09b094a1
+  some arbitrary payload
+
+A changelog is defined as a sequence of commits, each of which is a parent of some preceding commits.
+Write a program which, given an unordered sequence of commits, reorders them to a valid changelog.
+
+An ordering is said to be valid if any commit which is a parent of another commit appears before it.
+
+Taking a simple example.
+
+Say there is a payload "Ax09y" and its SHA1 hash is "01as3", then we can have a commit as
+
+parent: 01as3
+
+Ax09y
+
+The id of this commit will be SHA1("parent: 01as3\nAx09y") say "908ty"
+
+Now let there be another payload "abcd" and a commit with this payload which is parent of previous commit then this commit may be written as
+
+parent: 908ty
+
+abcd
+
+Id of this commit is SHA1("parent: 908ty\nabcd") say "34rt5".
+
+If we have one more commit say with payload "xyz" which is parent of earlier two commits then we can write it as
+
+parent: 34rt5
+
+parent: 908ty
+
+xyz
+
+Id of this commit is SHA1("parent: 34rt5\nparent: 908ty\nxyz").
+
+Input:
+A JSON array of the commits
+
+Output:
+A JSON array of the commits
+
+Sample input:
+["parent: 70d5c5867b4e5f23f2528555539570a06cee7e05\nIIR",
+ "parent: e20a83f79618704c87f9922d301b3587e9aed03b\nparent: 3b059cb02ee31cefa2fe32bc2695d70f9c4122fc\noxy",
+ "parent: 4142c354781c366af60b52d9e8cab8bc3506b104\nPmS"]
+
+Sample Output:
+["parent: e20a83f79618704c87f9922d301b3587e9aed03b\nparent: 3b059cb02ee31cefa2fe32bc2695d70f9c4122fc\noxy",
+ "parent: 4142c354781c366af60b52d9e8cab8bc3506b104\nPmS",
+ "parent: 70d5c5867b4e5f23f2528555539570a06cee7e05\nIIR"]
+
+Constraints:
+Number of commits is not more than 1,00,00(10^4) and size of input file will not exceed 1 MB.
+Payloads are strings of length no more than 20.
+
+UPDATE: This is an approximation algorithm problem. Compile and Test option won't work for this problem. Please submit your code to verify.

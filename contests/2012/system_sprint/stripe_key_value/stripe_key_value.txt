@@ -1,0 +1,68 @@
+System Sprint: Stripe Key Value
+
+Source: https://systems.interviewstreet.com/challenges/
+
+
+A certain database application requires a key/value store that supports the following four operations: 
+
+SET <key> <value> - updates the value of <key> to <value>
+
+GET <key> - returns the current (possibly uncommitted) <value> of <key>
+
+COMMIT - persists all uncommitted SETs
+
+ROLLBACK - undos all uncommitted SETs
+
+Values are initialized to string "0".
+
+Implement this key/value store.
+
+Input:
+A sequence of database commands
+
+Output:
+For each GET command write to standart output the value of corresponding key in a seperate line.
+
+Constraints:
+Keys and values will be alphanumeric ASCII strings of length no more than 10. Number of distinct keys will be no more than 1,00,000 and total number of database operations is less than 1,000,000.
+
+Note:
+You need to design appropriate file structure to solve this problem, just storing the key-value pairs in main memory and processing the operations will not be considered an elegant/desired solution.
+
+If you need to create files, create it in "/tmp". http://pastebin.com/A1Mj8XRz
+
+You need to complete the function provided for this task.The argument to given function is an array of operations and the number of operations.In this operations array there will be no "ROLLBACK" operation.
+
+Rollback operation is simulated by re-calling your function so you should not use any global/static storage.
+
+Do not modify the array passed as argument.
+
+As an example , for the sequence of commands below: 
+
+11
+SET a 1
+SET b 2
+GET a
+COMMIT
+SET b 3
+ROLLBACK
+GET b
+SET b 4
+ROLLBACK
+GET b
+ROLLBACK
+
+your function will be called three times , first time as
+
+keyValue({"SET a 1","SET b 2","GET a","COMMIT","SET b 3"},5)
+
+for second time as
+
+keyValue({"GET b","SET b 4"},2).
+
+and the third time as keyValue({"GET b"},1)
+
+Expected Output for above example:
+1
+2
+2
