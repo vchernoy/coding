@@ -1,0 +1,52 @@
+CodeSprint 2: Permutation
+
+Source: http://cs2.interviewstreet.com/recruit/challenges/
+
+This is an approximation solution type problem. Please read about this type of problem at the bottom before attempting.
+Given n, print a permutation(p) of (0,1,2...n-1).
+From the permutation p, you can create n-1 (x,y) coordinates, where x and y are consecutive pairs in the permutation.
+You are also given the n x n square matrix V.
+For each coordinate, you can find an associated value in the matrix V. (x and y are 0-indexed)
+
+Task:
+Given n and V, find the permutation p that maximizes the sum of the associated values of the consecutive pair coordinates
+
+Constraints:
+n <= 50
+
+Input:
+First line contains n
+Next n lines contains n integers, forming the matrix V
+
+Output:
+Space separated permutation of (0,1,2....n-1)
+
+Sample Input:
+3
+0 4 5
+2 0 -2
+0 0 0
+
+Sample Output:
+1 0 2
+
+Sample Explanation:
+Since n = 3, there are 6 possible permutations: [012],[021],[102],[120],[201],[210]
+Choose [012]. 
+The two consecutive coordinate pairs are: (0,1) and (1,2)
+V(0,1) = 4 (again, its a 0-index coordinate)
+0 4 5
+2 0 -2
+0 0 0
+V(1,2) = -2
+0 4 5
+2 0 -2
+0 0 0
+Thus, the score for [012] = 4 + -2 = 2
+By brute forcing each of the 6 permutations, we find that [102] is the maximum with a score of 7, with the consecutive pairs being (1,0) and (0,2), and V(1,0) = 2 and V(0,2) = 5.
+
+Scoring: 
+Invalid permutations will not be awarded any points, valid permutations will be awarded points based on the sum of V(i,j) the permutation gets.
+
+What's an approximate solution problem? http://codesprint.interviewstreet.com/recruit/challenges/faq/view#approx
+
