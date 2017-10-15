@@ -1,0 +1,64 @@
+Problem: Tic-tac-toe
+Programming Challenge: Socialcam (InterviewStreet) 
+Source: https://socialcam.interviewstreet.com/challenges/dashboard/#problem/4f6b9fec8fdb9
+
+You and your friend find Tic-tac-toe to be a horrible game. It's so bad, in fact, that it makes you want to lose. Your challenge is to write an optimally atrocious Tic Tac Toe AI, to be played against your equally Tic-Tac-Toe hating friend. 
+
+Optimally atrocious Tic Tac Toe is defined as:
+
+1. A player must never place three marks in a row, if it has any other options .
+2. A player must force his/her opponent to place three marks in a row, if possible .
+3. A player must avoid sequences of moves that violate either of the first two rules .
+
+In other words, you want to try to force the other person to "win". Failing that, you want to force a draw. If that is not possible, then take the "win" as a last resort.
+
+Your program should take 9 integers. These integers represent the positions on a tic-tac-toe board in the following order:   
+
+ 0 | 1 | 2
+-----------
+ 3 | 4 | 5
+-----------
+ 6 | 7 | 8 
+
+A value of 0 indicates an empty square. A value of 1 indicates your mark. A value of -1 indicates your opponent's mark
+
+For example, if you are player X, the board
+
+ X | O | 
+-----------
+   | X | 
+-----------
+   |   | O 
+
+Would be represented as 1 -1 0 0 1 0 0 0 -1
+
+Your program should return the index [0 to 8] of an optimally atrocious move. Your program need not handle boards with no empty spaces, boards where it is not your turn, or boards where one player already has 3 marks in a row.
+
+Input Format:
+First line contains the number of test-cases, N.
+Then follow N lines, each containing 9 space-separated integers as described above.
+
+Sample Output:
+For each test-case print in a separate line the index of your optimally atrocious move. There may be more than one possible answer. You may output any of them.
+
+Sample Input:
+2
+-1 0 0 0 0 0 0 0 0
+-1 1 -1 1 0 0 0 0 0
+
+Sample Output:
+3
+6
+
+Explanation:
+In the first testcase, There is only one mark on the board and that is of your opponent's. There are four winning positions for the next move, 1, 3, 5 and 7. If you make your next move on any of these positions and the game continues in a way such that both of you want to force your opponent to place 3 marks in a row, then you will succeed.
+
+Constraints:
+1 <= N <= 100
+
+Note1:
+Three marks in a "row" means in any row, column or diagonal, as in normal tic-tac-toe.
+
+Note2:
+Download sample testcases won't work as this is approx-question. You can use sample cases from problem page itself
+

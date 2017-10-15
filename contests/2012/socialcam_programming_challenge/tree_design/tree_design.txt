@@ -1,0 +1,43 @@
+Problem: Tree Design
+Programming Challenge: Socialcam (InterviewStreet)
+Source: https://socialcam.interviewstreet.com/challenges/dashboard/#problem/4f6b7c5c5f275
+
+Write a program that prints a tree made out of '*'  and '|' . Shape of the tree depends on the given number N.
+
+Input Format:
+Given an integer N.
+
+Output Format:
+Display the corresponding tree to standard output.
+
+Note:
+You can find additional sample input/outputs in the sample testcases download.
+
+Constraints:
+1 <= N <= 60
+
+Sample Input
+1
+
+Sample Output
+   *
+  ***
+ *****
+*******
+   |
+
+Sample Input
+2
+
+Sample Ouput
+      *
+     ***
+    *****
+   *******
+    *****
+   *******
+  *********
+ ***********
+*************
+     |||
+     |||

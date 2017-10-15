@@ -1,0 +1,64 @@
+Problem: Scheduler
+Programming Challenge: Socialcam (InterviewStreet)
+Source: https://socialcam.interviewstreet.com/challenges/dashboard/#problem/4f6e38011da78
+
+On iOS, applications can display badges (red numbers indicating new activity) on their icons on the home screen. These badges are set via push notifications sent from remote servers. At Socialcam, we have a system to schedule badge updates to our millions of users. This system keeps track of when each user opens Socialcam, calculates what badge number should be displayed for each user, and dispatches periodic badge updates.
+
+We challenge you to write a scheduler like the Socialcam badge scheduler.
+
+Your program should support the following operations:
+
+1. set A T:  Schedule an update for a specific user with id: A, at a given timestamp: T. 
+
+2. list T:  Retrieve all user ids that should do the task at or before the given timestamp: T. User ids has to be printed in such a way that the user with a scheduled update at lesser timestamp comes first and in case of users with scheduled update at same time they come in increasing order of their ids. In case no user is scheduled on or before that timestamp print a blank line.
+
+3. del A:  Remove the user with given id A, from the list. 
+
+4. clear:  Clear the list
+
+Note:
+Each user can have at most one update scheduled. Successive updates should overwrite previous values.
+
+All testcases for this problem belong to the same instance and so they are all related i.e the output for a testcase also depends on the contents of previous testcases. SInce your program is re-run for each testcase, you need to persist some data to the disk to correctly solve the problem.
+
+Input Format:
+First line of the input contains an integer N, the number of operations to process. Then follows N lines each describing an operation as explained above.
+
+Output Format:
+For each list command in the input, print in a separate line the space separated list of required user ids.
+
+Sample Input00:
+6
+set 2 571480115
+set 3 16597786
+set 2 10060115
+list 16597786
+set 1 16597786
+list 16597786
+
+Sample Output 00:
+2 3
+2 1 3
+
+Sample Input 01:
+9
+set 4 173194509
+set 0 864310632
+set 4 600059678
+del 1
+set 6 201418200
+list 360849210
+clear
+set 6 400000000
+list 500000000
+
+Sample Output 01:
+2 3 6
+6
+
+Constraints:
+1 <= N <= 100,000
+For bigger testcases the number of list commands is up to 10% of N.
+
+Note:
+You can create your own file in the current working directory.
